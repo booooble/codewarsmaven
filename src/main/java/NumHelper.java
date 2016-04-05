@@ -20,10 +20,11 @@ public class NumHelper {
             return new double[0];
         }
         if (s.length >= 3) {
+            int addedElementsCount = n - s.length;
             result = Arrays.copyOf(s, n);
-            while (count < n - s.length) {
+            while (count < addedElementsCount) {
                 int inputIndex = s.length + count;
-                result[s.length + count] = result[inputIndex - 1] + result[inputIndex - 2] + result[inputIndex - 3];
+                result[inputIndex] = result[inputIndex - 1] + result[inputIndex - 2] + result[inputIndex - 3];
                 count++;
             }
         }
@@ -38,7 +39,6 @@ public class NumHelper {
                 [1,0,0,0,0,0,1], n = 10 --> [1,0,0,0,0,0,1,1,2,4]
      */
     public static double[] xbonacci(double[] signature, int n) {
-        int x;
         double[] result = null;
         int count = 0;
         try {
@@ -50,15 +50,16 @@ public class NumHelper {
             return new double[0];
         }
         if (signature.length >= 2) {
-            x = signature.length;
             result = Arrays.copyOf(signature, n);
-            while (count < n - x) {
-                int inputIndex = x + count;
+            int inpArrayLength = signature.length;
+            int addedElementsCount = n - inpArrayLength;
+            while (count < addedElementsCount) {
+                int inputIndex = inpArrayLength + count;
                 double nextElement = 0.0;
-                for (int i = 1; i <= x; i++) {
+                for (int i = 1; i <= inpArrayLength; i++) {
                     nextElement += result[inputIndex - i];
                 }
-                result[x + count] = nextElement;
+                result[inputIndex] = nextElement;
                 count++;
             }
         }
@@ -79,10 +80,10 @@ public class NumHelper {
                     }
                 }
             }
+            return list.stream().mapToInt(i -> i).toArray();
         } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
             System.out.println(e);
             return new int[0];
         }
-        return list.stream().mapToInt(i -> i).toArray();
     }
 }

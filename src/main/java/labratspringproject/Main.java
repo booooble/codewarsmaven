@@ -1,4 +1,4 @@
-package springproject;
+package labratspringproject;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

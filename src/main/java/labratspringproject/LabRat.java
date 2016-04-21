@@ -1,4 +1,4 @@
-package springproject;
+package labratspringproject;
 
 public class LabRat {
     private String text;

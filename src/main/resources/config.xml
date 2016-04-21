@@ -4,8 +4,21 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="rat" class="springproject.LabRat">
+    <bean id="rat" class="labratspringproject.LabRat">
         <constructor-arg value="Hi!"/>
         <property name="name" value="Alice"/>
+    </bean>
+
+    <bean id="pub" class="springinthepub.Pub">
+        <constructor-arg value="BlueLagoone"></constructor-arg>
+        <constructor-arg value="1000.0"></constructor-arg>
+        <property name="BlueLagoone"></property>
+    </bean>
+
+    <bean id="beerman" class="springinthepub.Beerman">
+        <constructor-arg value="Tom"></constructor-arg>
+        <constructor-arg value="50"></constructor-arg>
+        <constructor-arg value="20.0"></constructor-arg>
+        <property name="Tom"></property>
     </bean>
 </beans>

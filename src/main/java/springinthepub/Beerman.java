@@ -6,12 +6,13 @@ package springinthepub;
 public class Beerman {
     String name;
     int age;
-    double vol;
+    double litersToDrink;
+    static int beerManCount = 0;
 
-    public Beerman(String name, int age, double vol) {
+    public Beerman(String name, int age, double litersToDrink) {
         this.name = name;
         this.age = age;
-        this.vol = vol;
+        this.litersToDrink = litersToDrink;
     }
 
     public String getName() {
@@ -30,11 +31,11 @@ public class Beerman {
         this.age = age;
     }
 
-    public double getVol() {
-        return vol;
+    public double getLitersToDrink() {
+        return litersToDrink;
     }
 
-    public void setVol(double vol) {
-        this.vol = vol;
+    public void setLitersToDrink(double litersToDrink) {
+        this.litersToDrink = litersToDrink;
     }
 }

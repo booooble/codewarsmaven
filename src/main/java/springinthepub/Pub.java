@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pub {
+    static final int maxCapacity = 50;
     String pubName;
     int capacity = 0;
-    static double beerLiterLimit;
+    double beerLiterLimit;
     List<Beerman> visitors;
-    static int maxCapacity = 50;
 
     public Pub(String pubName, double beerLiterLimit) {
         this.pubName = pubName;
@@ -25,7 +25,8 @@ public class Pub {
             if (visitor.age > 18 && capacity <= maxCapacity) {
                 this.visitors.add(visitor);
                 capacity--;
-                beerLiterLimit -= visitor.getVol();
+                beerLiterLimit -= visitor.getLitersToDrink();
+                Beerman.beerManCount++;
             }
         }
     }

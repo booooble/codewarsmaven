@@ -14,7 +14,7 @@ public class Pub {
     double beerLiterLimit;
     List<Beerman> visitors = new ArrayList<>();
 
-    @Autowired
+    //    @Autowired
     public Pub(String pubName, double beerLiterLimit) {
         this.pubName = pubName;
         this.beerLiterLimit = beerLiterLimit;
@@ -32,13 +32,19 @@ public class Pub {
                 this.currCapacity++;
                 this.beerLiterLimit -= visitor.getLitersToDrink();
                 Beerman.beerManCount++;
-//        temp = visitors.stream().filter((i)->i.age >= 18 && this.currCapacity <= maxCapacity
-//                && this.beerLiterLimit > 0).collect(Collectors.toList());
-//        temp = visitors.stream().filter(i-> i.age >= 18 && this.currCapacity <= maxCapacity
-//                && this.beerLiterLimit > 0).collect(Collectors.toList());
                 this.visitors = temp;
             }
         }
+
+        //The same as above but using streams
+//        visitors.stream().filter(visitor -> visitor.age > 18 && this.currCapacity <= maxCapacity &&
+//                this.beerLiterLimit > 0).forEach(visitor -> {
+//            temp.add(visitor);
+//            this.currCapacity++;
+//            this.beerLiterLimit -= visitor.getLitersToDrink();
+//            Beerman.beerManCount++;
+//            this.visitors = temp;
+//        });
     }
 
     @Override

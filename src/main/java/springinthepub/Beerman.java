@@ -41,7 +41,7 @@ public class Beerman {
 
     @Override
     public String toString() {
-        return "Beerman{" +
+        return "\n\t\tBeerman{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", litersToDrink=" + litersToDrink +
